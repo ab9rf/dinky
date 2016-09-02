@@ -1,10 +1,10 @@
 [
 {
   "modid": "msm",
-  "name": "Minimal Scala Mod",
+  "name": "Dinky",
   "description": "",
-  "version": "@GENERATORS_VER@",
-  "url": "http://www.github.com/ab9rf/minimal-scala-mod",
+  "version": "@DINKY_VER@",
+  "url": "http://www.github.com/ab9rf/dinky",
   "updateUrl": "",
   "authorList": [
     "ab9rf"
