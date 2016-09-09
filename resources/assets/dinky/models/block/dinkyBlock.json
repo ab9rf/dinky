@@ -1,0 +1,8 @@
+{
+    "parent": "dinky:block/threeface",
+    "textures": {
+        "up": "dinky:blocks/dinkyBlock",
+        "side": "dinky:blocks/dinkyBlock",
+        "down": "dinky:blocks/dinkyBlock"
+    }
+}
