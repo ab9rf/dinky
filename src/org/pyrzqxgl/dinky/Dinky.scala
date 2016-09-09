@@ -10,12 +10,47 @@
 package org.pyrzqxgl.dinky
 
 import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+import net.minecraftforge.event.world.BlockEvent.BreakEvent
+import net.minecraft.util.text.TextComponentString
+import net.minecraft.util.text.TextFormatting
+import net.minecraftforge.common.MinecraftForge
+import net.minecraftforge.fml.common.registry.GameRegistry
+import net.minecraft.item.ItemBlock
+import net.minecraft.item.Item
+import net.minecraft.util.ResourceLocation
+import net.minecraftforge.fml.common.Mod.EventHandler
+import net.minecraftforge.fml.common.event.FMLInitializationEvent
+import net.minecraftforge.client.model.ModelLoader
+import net.minecraft.client.renderer.block.model.ModelResourceLocation
+import net.minecraft.client.Minecraft
+import net.minecraftforge.fml.common.SidedProxy
+import net.minecraftforge.fml.common.Mod.Instance
+import net.minecraftforge.fml.relauncher.Side
 
-@Mod(modid = Dinky.modId, version = "Dinky_VER", name = "DinkyMod", modLanguage = "scala")
+
+@Mod(modid = Dinky.modId, acceptedMinecraftVersions = "[1.10.2]", version = Dinky.version, name = "DinkyMod", modLanguage = "scala")
 object Dinky {
-  var instance = this
-
+ 
+  final val version = "DINKY_VER"
   final val modId = "Dinky"
-
+  
+  @Instance(modId)
+  var instance = this
+  
+  @SidedProxy (clientSide = "org.pyrzqxgl.dinky.ClientProxy", serverSide = "org.pyrzqxgl.dinky.ServerProxy")
+  var proxy: CommonProxy = null
+  
+  @EventHandler
+  def preInit(e: FMLInitializationEvent) {
+    Blocks.registerBlocks()
+    proxy.preInit();
+  }
+  
+  @EventHandler 
+  def init(e: FMLInitializationEvent) {
+  }
+    
+  
 }
 
