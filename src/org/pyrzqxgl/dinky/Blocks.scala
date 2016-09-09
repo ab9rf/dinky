@@ -8,15 +8,15 @@ import net.minecraft.item.Item
 
 object Blocks {
   final val dinkyBlock = new dinkyBlock()
-  final val farmItemBlock = new ItemBlock(dinkyBlock)
+  final val dinkyItemBlock = new ItemBlock(dinkyBlock)
   
   def registerBlocks() = {
     GameRegistry.register(dinkyBlock.setRegistryName("dinkyBlock"))
-    GameRegistry.register(farmItemBlock.setRegistryName(dinkyBlock.getRegistryName()))
+    GameRegistry.register(dinkyItemBlock.setRegistryName(dinkyBlock.getRegistryName()))
   }
   
   def registerModels() = {
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-				  .register(farmItemBlock, 0, new ModelResourceLocation(farmItemBlock.getRegistryName.toString(), "inventory"))
+				  .register(dinkyItemBlock, 0, new ModelResourceLocation(dinkyItemBlock.getRegistryName.toString(), "inventory"))
   }
 }
