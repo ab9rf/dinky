@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "dinky:blocks/dinkyBlockFacesParticle",
+        "down": "dinky:blocks/dinkyBlockFacesDown",
+		"up":    "dinky:blocks/dinkyBlockFacesUp",
+		"north": "dinky:blocks/dinkyBlockFacesNorth", 
+		"south": "dinky:blocks/dinkyBlockFacesSouth",
+		"west":  "dinky:blocks/dinkyBlockFacesWest",
+		"east":  "dinky:blocks/dinkyBlockFacesEast"
+      
+    }
+}

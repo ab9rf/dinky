@@ -12,6 +12,8 @@ import net.minecraft.block.material.Material
 object Blocks {
   final val dinkyBlock = new DinkyBlock()
   
+  final val dinkyBlockFaces = new DinkyBlockFaces()
+  
   final val planterBlock = new PlanterBlock()
   
   def preInit() = {
@@ -22,6 +24,7 @@ object Blocks {
     }
 
     registerBlock(dinkyBlock, "dinkyBlock")
+    registerBlock(dinkyBlockFaces, "dinkyBlockFaces")
     registerBlock(planterBlock, "planterBlock")
   }
   
@@ -33,11 +36,13 @@ object Blocks {
     }
 
     registerModel(dinkyBlock)
+    registerModel(dinkyBlockFaces)
     registerModel(planterBlock)
   }
   
   def init() = {
     dinkyBlock.init()
+    dinkyBlockFaces.init()
     planterBlock.init()
   }
 }
