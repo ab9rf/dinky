@@ -43,14 +43,19 @@ object Dinky {
   
   @EventHandler
   def preInit(e: FMLInitializationEvent) {
-    Blocks.registerBlocks()
-    proxy.preInit();
+    Blocks.preInit()
+    proxy.preInit()
   }
   
   @EventHandler 
   def init(e: FMLInitializationEvent) {
+    Blocks.init()
   }
     
   
 }
 
+trait IInitializer {
+  def init() { }
+  def preInit() { }
+}

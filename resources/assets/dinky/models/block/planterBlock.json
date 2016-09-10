@@ -1,0 +1,8 @@
+{
+    "parent": "dinky:block/threeface",
+    "textures": {
+        "up": "dinky:blocks/planterBlock",
+        "side": "dinky:blocks/planterBlock",
+        "down": "dinky:blocks/planterBlock"
+    }
+}
