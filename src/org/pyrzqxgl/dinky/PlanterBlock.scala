@@ -18,6 +18,7 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity
 import net.minecraft.network.NetworkManager
 
 class PlanterBlock extends BlockContainer(Material.WOOD) with IInitializer {
+  this.setRegistryName("planterBlock")
   this.setUnlocalizedName("planterBlock")
   this.setCreativeTab(CreativeTabs.MISC)
   

@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material
 import net.minecraft.creativetab.CreativeTabs
 
 class DinkyBlockFaces extends Block(Material.WOOD) with IInitializer {
+  this.setRegistryName("dinkyBlockFaces")
   this.setUnlocalizedName("dinkyBlockFaces")
   this.setCreativeTab(CreativeTabs.MISC)
 }
