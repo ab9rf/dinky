@@ -10,22 +10,16 @@ import net.minecraft.init.Items
 import net.minecraft.block.material.Material
 
 object Blocks {
-  final val dinkyBlock = new DinkyBlock()
-  
-  final val dinkyBlockFaces = new DinkyBlockFaces()
-  
-  final val planterBlock = new PlanterBlock()
+  final val blocks = Iterable(new DinkyBlock(), new DinkyBlockFaces(), new PlanterBlock())
   
   def preInit() = {
-    def registerBlock(block: Block with IInitializer, name: String) = {
+    def registerBlock(block: Block with IInitializer) = {
       block.preInit()
-      GameRegistry.register(block.setRegistryName(name))
+      GameRegistry.register(block)
       GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()))
     }
 
-    registerBlock(dinkyBlock, "dinkyBlock")
-    registerBlock(dinkyBlockFaces, "dinkyBlockFaces")
-    registerBlock(planterBlock, "planterBlock")
+    blocks.foreach (registerBlock)
   }
   
   def registerModels () = {
@@ -34,15 +28,11 @@ object Blocks {
       Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 	        .register(itemBlock, 0, new ModelResourceLocation(itemBlock.getRegistryName.toString(), "inventory"))
     }
-
-    registerModel(dinkyBlock)
-    registerModel(dinkyBlockFaces)
-    registerModel(planterBlock)
+    
+    blocks.foreach (registerModel)
   }
   
   def init() = {
-    dinkyBlock.init()
-    dinkyBlockFaces.init()
-    planterBlock.init()
+    blocks.foreach(_.init())
   }
 }
